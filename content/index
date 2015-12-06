@@ -1,0 +1,14 @@
+<div class="container" style="height:1000px;margin:10px auto 10px auto;">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="jumbotron">
+        <h1>
+          I am content
+        </h1>
+        <p>
+          And next is <next>mdex</next>.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

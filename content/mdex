@@ -1,0 +1,21 @@
+<div class="container" style="margin:10px auto 10px auto;">
+  <div class="row">
+    <div class="col-md-12">
+
+      <markdown>
+
+# I am a markdown example
+
+Which should be rendered by marked
+
+## But will it work
+
+Is always the question
+
+And next is <next>mbed</next>
+
+      </markdown>
+      
+    </div>
+  </div>
+</div>

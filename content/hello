@@ -1,0 +1,10 @@
+<div class="container" style="margin:10px auto 10px auto;">
+  <div class="row">
+    <div class="col-md-12">
+
+      <p>Expect a hello!</p>
+      <script src="http://getter.test.cottagelabs.com/test.js"></script>
+      
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="container" style="margin:10px auto 10px auto;">
+  <div class="row">
+    <div class="col-md-12">
+
+      <p>Expect a script below here.</p>
+      <script src="https://gist.github.com/edsu/76729.js"></script>
+
+      <p>And next is <next>hello</next></p>
+    </div>
+  </div>
+</div>
