@@ -14,7 +14,7 @@ Have a look at the index.html file - it is like normal, it includes some things,
 
 It also at the top in the head has a call inside jquery ready to call getter.js - by default, it works fine.
 
-Then it has a div in it called <getter></getter> - that controls the magic.
+Then it has a div in it called &lt;getter&gt;&lt;/getter&gt; - that controls the magic.
 
 There is a folder called content, in which you should put your files that contain content. They are page snippets. 
 Have a look at the examples. There can be subfolders in there, they will work fine.
