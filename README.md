@@ -35,7 +35,7 @@ resources - is a list of resources you would like loaded. This is also just a co
 These resources can be URLs to .js or .css files. They can also be shortcodes, jq (jquery) d3 (d3) fa (font-awesome) bs (bootstrap) md (marked markdown) holder (see the CL holder repo).
 
 scroll - if this is true, which it is by default, then hitting the bottom of the page will automatically try to load the next page. This is defined by having an html tag in the 
-content called <next></next> - and the content of that tag should be the relative route to the page from INSIDE the content directory.
+content called &lt;next&gt;&lt;/next&gt; - and the content of that tag should be the relative route to the page from INSIDE the content directory.
 
 append - if this is true, which it is by default, then hitting the bottom of the page results in the next page being appended to the current page rather than overwriting it.
 
