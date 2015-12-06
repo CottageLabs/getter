@@ -1,6 +1,8 @@
 # getter
 A javascript app for running a site of static content and dynamically retrieving them as pages
 
+Version 0.1.0
+
 
 # CAVEATS
 
@@ -43,5 +45,5 @@ append - if this is true, which it is by default, then hitting the bottom of the
 TODO: It should also be possible to change the getter variables by including them as html tags within the page content that is loaded, so that a new page can stop scrolling or appending, for example.
 This will be done by making the options an object and then checking for each of them as tags in the latest loaded content.
 
-
+TODO: have wrapper start and end for each appended page content, so they can be easily wrapped by default. These could be loaded from files like header and footer, or could just be read from index.html on the first load.
 
