@@ -47,3 +47,11 @@ This will be done by making the options an object and then checking for each of 
 
 TODO: have wrapper start and end for each appended page content, so they can be easily wrapped by default. These could be loaded from files like header and footer, or could just be read from index.html on the first load.
 
+# ROUTING AND CONTENT
+
+If the content of this repo is served at mysite.com then a request to mysite.com/my/file will serve the content found in the file at content/my/file.
+
+If mysite.com/content/my is requested, then the content of the file at content/my/index will be served.
+
+If the default nignx config - or one similar - is used, then requests for content in a file will also check for that file with the .html extension appended, just in case.
+

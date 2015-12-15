@@ -3,10 +3,6 @@
 Gets all the things that a page may require for being put together
 So that simple sites can easily be put together and then page content can be created just by writing html/markdown files
 
-If no prev/next is set, but still expect infinite scroll, then should be able to get next by published date in html
-Will be able to set page title based on title provided in the html document
-Able to build a search UI of content? by spidering source bucket?
-
 */
 
 // first some code to load necessary files
@@ -72,17 +68,21 @@ var getter = function(baseurl,content,header,footer,resources,scroll,append) {
 		var url = baseurl + '/' + content + '/' + next;
 
 		if ( append && $('getter').last().html().length !== 0 ) $('getter').last().after('<getter></getter>');
-		$('getter').last().load(url, function () {
-			$('getter').last().find('markdown').each(function() { $(this).after(marked($(this).html())); });
-			//console.log($('script').first().attr('src'));
-			//$.get($('script').first().attr('src'),function(data) { console.log(data); });
-			
-			// (re)set some vars based on latest pulled page content
-			/*title = last.getElementsByTagName('title')[0].innerHTML;
-			published = last.getElementsByTagName('published')[0].innerHTML;
-			author = last.getElementsByTagName('author')[0].innerHTML;*/
-			try {next = $('next').last().html();} catch(err) {}
-			//tags = last.getElementsByTagName('tags')[0].innerHTML.split(',');
+		$('getter').last().load(url, function (r, s, xhr) {
+			if (xhr.status === 200 ) {
+				$('getter').last().find('markdown').each(function() { $(this).after(marked($(this).html())); });
+
+				// (re)set some vars based on latest pulled page content
+				/*title = last.getElementsByTagName('title')[0].innerHTML;
+				published = last.getElementsByTagName('published')[0].innerHTML;
+				author = last.getElementsByTagName('author')[0].innerHTML;*/
+				try {next = $('next').last().html();} catch(err) {}
+				//tags = last.getElementsByTagName('tags')[0].innerHTML.split(',');
+			} else {
+				// a suitable nginx route could configure this to return a custom 404 for if page content file does not exist
+				// in which case actually the request would seem to succeed but the content of the 404 file would be shown
+				$('getter').last().html('404 - file not found');
+			}
 
 			setTimeout(function() { getting = false;}, 1000);
 		});
