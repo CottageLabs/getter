@@ -30,8 +30,8 @@ var getter = function(baseurl,content,header,footer,resources,scroll,append) {
 	if (content === undefined) content = 'content';
   
   // get the separate header and the footer, unless false
-  if (header === undefined) header = 'header.html';
-  if (footer === undefined) footer = 'footer.html';
+  if (header === undefined) header = baseurl + '/header.html';
+  if (footer === undefined) footer = baseurl + '/footer.html';
 	if ( header ) $.get(header, function(data) { $('body').prepend(data); });
 	if ( footer ) $.get(footer, function(data) { $('body').append(data); });
 
