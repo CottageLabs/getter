@@ -1,20 +1,12 @@
 <div class="container" style="margin:10px auto 10px auto;">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12"></p>
+undefined<h1 id="i-am-a-markdown-example">I am a markdown example</h1>
+<p>Which should be rendered by marked</p>
+<h2 id="but-will-it-work">But will it work</h2>
+<p>Is always the question</p>
+<p>And next is <next>mbed</next></p>
 
-      <markdown>
-
-# I am a markdown example
-
-Which should be rendered by marked
-
-## But will it work
-
-Is always the question
-
-And next is <next>mbed</next>
-
-      </markdown>
       
     </div>
   </div>

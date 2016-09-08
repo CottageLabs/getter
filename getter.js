@@ -61,7 +61,7 @@ var getter = function(baseurl,content,header,footer,resources,scroll,append) {
 	if (next.length === 0) next = 'index';
 	//, title, published, author, tags;
 	var getting = false;
-	var getpage = function() {
+	var getpage = function(first) {
 		if (getting) return; // if already getting, do nothing more
 		getting = true;
 		current = next;
@@ -88,14 +88,15 @@ var getter = function(baseurl,content,header,footer,resources,scroll,append) {
 		});
 				
 		// pushstate if possible
-		try {
-			if ('pushState' in window.history && next !== 'index') window.history.pushState('', 'New URL: ' + baseurl + '/' + next, baseurl + '/' + next);
-		} catch(err) {
-			console.log('pushstate not working! Although, note, it seems to fail on local file views these days...' + err);
+		if (!first) {
+			try {
+				if ('pushState' in window.history && next !== 'index') window.history.pushState('', 'New URL: ' + baseurl + '/' + next, baseurl + '/' + next);
+			} catch(err) {
+				console.log('pushstate not working! Although, note, it seems to fail on local file views these days...' + err);
+			}
 		}
-
 	}
-	getpage(); // on first page load, get the first page content
+	getpage(true); // on first page load, get the first page content
 		
 	// if scroll ability is requested, setup a check for hitting page bottom then getpage
 	if ( scroll === undefined ) scroll = true;

@@ -1,7 +1,8 @@
 # getter
-A javascript app for running a site of static content and dynamically retrieving them as pages
 
-Version 0.1.0
+A node.js static site generator that can also auto-load next pages
+
+Version 0.2.0
 
 
 # CAVEATS

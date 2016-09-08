@@ -1,0 +1,24 @@
+# example nginx config to ensure content can be served to getter and not cause infinte loops
+
+server {
+  listen 80;
+  server_name getter.test.cottagelabs.com;
+  root /home/cloo/dev/getter;
+
+  add_header Pragma public;
+  add_header Cache-Control "public";
+  add_header Access-Control-Allow-Origin *;
+
+  location /content {
+    try_files $uri /404 =404;
+  }
+
+  location / {
+    try_files /serve/$uri /serve/$uri.html /404.html =404;
+  }
+  
+  location /static {
+    try_files /serve/$uri =404;
+    expires 30d;
+  }
+}
