@@ -18,7 +18,7 @@ server {
   }
   
   location /static {
-    try_files /serve/$uri =404;
+    try_files $uri /serve/$uri =404;
     expires 30d;
   }
 }
